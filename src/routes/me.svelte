@@ -23,6 +23,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{user.nickname.toUpperCase()} - Master Keeper</title>
+</svelte:head>
+
 <main>
 	<Navbar {user} />
 
