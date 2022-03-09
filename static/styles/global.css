@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root {
+	font-size: 15px;
+	/* Light Theme */
+	--bg-main-light:  hsl(0, 0%, 100%);
+	--bg-light: hsl(0, 0%, 96%);
+	--text-4light1: hsl(0, 0%, 0%);
+	--text-4light2: hsl(0, 0%, 40%);
+
+	--red-4light: hsl(3, 100%, 59%);
+	--pink-4light: hsl(349, 100%, 59%);
+	--orange-4light: hsl(35, 100%, 50%);
+	--yellow-4light: hsl(48, 100%, 50%);
+	--green-4light: hsl(135, 59%, 49%);
+	--teal-4light: hsl(199, 94%, 67%);
+	--blue-4light: hsl(211, 100%, 50%);
+	--indigo-4light: hsl(241, 61%, 59%);
+	--purple-4light: hsl(280, 68%, 60%);
+
+	--gray1-4light: hsl(240, 2%, 57%);
+	--gray2-4light: hsl(240, 3%, 69%);
+	--gray3-4light: hsl(240, 5%, 79%);
+	--gray4-4light: hsl(240, 6%, 83%);
+	--gray5-4light: hsl(240, 11%, 91%);
+	--gray6-4light: hsl(240, 24%, 96%);
+
+	/* Dark Theme */
+	--bg-main-dark:hsl(0, 0%, 20%);
+	--bg-dark: hsl(0, 0%, 16%);
+	--text-4dark1: hsl(0, 0%, 100%);
+	--text-4dark2: hsl(0, 0%, 80%);
+
+	--red-4dark: hsl(3, 100%, 61%);
+	--pink-4dark: hsl(349, 100%, 59%);
+	--orange-4dark: hsl(36, 100%, 52%);
+	--yellow-4dark: hsl(50, 100%, 52%);
+	--green-4dark: hsl(129, 67%, 52%);
+	--teal-4dark: hsl(197, 100%, 70%);
+	--blue-4dark: hsl(210, 100%, 52%);
+	--indigo-4dark: hsl(241, 73%, 63%);
+	--purple-4dark: hsl(280, 85%, 65%);
+
+	--gray1-4dark: hsl(240, 2%, 57%);
+	--gray2-4dark: hsl(240, 1%, 39%);
+	--gray3-4dark: hsl(240, 1%, 29%);
+	--gray4-4dark: hsl(240, 2%, 23%);
+	--gray5-4dark: hsl(240, 2%, 18%);
+	--gray6-4dark: hsl(240, 3%, 11%);
+}
+body {
+	--bg-main: var(--bg-main-light);
+	--bg: hsl(0, 0%, 97%);
+	--text1: hsl(0, 0%, 0%);
+	--text2: hsl(0, 0%, 40%);
+
+	--red: hsl(3, 100%, 59%);
+	--pink: hsl(349, 100%, 59%);
+	--orange: hsl(35, 100%, 50%);
+	--yellow: hsl(48, 100%, 50%);
+	--green: hsl(135, 59%, 49%);
+	--teal: hsl(199, 94%, 67%);
+	--blue: hsl(211, 100%, 50%);
+	--indigo: hsl(241, 61%, 59%);
+	--purple: hsl(280, 68%, 60%);
+
+	--gray1: hsl(240, 2%, 57%);
+	--gray2: hsl(240, 3%, 69%);
+	--gray3: hsl(240, 5%, 79%);
+	--gray4: hsl(240, 6%, 83%);
+	--gray5: hsl(240, 11%, 91%);
+	--gray6: hsl(240, 18%, 96%);
+
+	--shadow1: 0 1px 1px 0 hsla(0, 0%, 0%, .12);
+}
+body.dark-theme {
+	--bg-main: var(--bg-main-dark);
+	--bg: hsl(0, 0%, 16%);
+	--text1: hsl(0, 0%, 100%);
+	--text2: hsl(0, 0%, 80%);
+
+	--red: hsl(3, 100%, 61%);
+	--pink: hsl(349, 100%, 59%);
+	--orange: hsl(36, 100%, 52%);
+	--yellow: hsl(50, 100%, 52%);
+	--green: hsl(129, 67%, 52%);
+	--teal: hsl(197, 100%, 70%);
+	--blue: hsl(210, 100%, 52%);
+	--indigo: hsl(241, 73%, 63%);
+	--purple: hsl(280, 85%, 65%);
+
+	--gray1: hsl(240, 2%, 57%);
+	--gray2: hsl(240, 1%, 39%);
+	--gray3: hsl(240, 1%, 29%);
+	--gray4: hsl(240, 2%, 23%);
+	--gray5: hsl(240, 2%, 18%);
+	--gray6: hsl(240, 3%, 11%);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+	color: var(--text1);
+	outline: none;
+	text-decoration: none;
+}
+
+body {
+	background: var(--bg);
+}
+.text1 {
+	color: var(--text1);
+}
+.text2 {
+	color: var(--text2);
+}
+div.hr {
+	border-bottom: 1px solid var(--gray2);
+	margin: .4rem;
+}
+.title {
+	margin: 3rem auto 0.5rem;
+	text-align: center;
+}
+.w-full {
+	width: 100%;
+}
+label {
+	font-size: .8rem;
+}
+.small {
+	font-size: .85rem !important;
+	color: var(--text2) !important;
+}
+.to-remove {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.to-remove::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 40%;
+	left: 0;
+	transition: 114ms;
+	background: linear-gradient(to right, transparent, var(--gray4), transparent);
+	z-index: 3;
+	opacity: .5;
+	animation: loading 1s infinite;
+}
+@keyframes loading {
+	0% { left: 0;}
+	50% {left: 60%}
+	100% { left: 0;}
+}

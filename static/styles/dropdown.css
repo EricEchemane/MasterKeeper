@@ -1,0 +1,67 @@
+div.menu-wrapper {
+    width: max-content;
+    display: inline-block;
+    height: auto;
+    position: relative;
+}
+div.menu-label {
+    border-radius: .3rem;
+    width: min-content;
+    box-shadow: 0 0 0 1px var(--gray3);
+    cursor: pointer;
+    padding: .25rem .6rem;
+    cursor: default;
+    background: url(./arrow-down.svg) no-repeat;
+    padding-right: 2rem;
+    background-position: 97% center;
+    background-size: 1.5rem;
+}
+div.menu-wrapper.show .menu-items{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: visible;
+}
+div.menu-items {
+    position: absolute;
+    top: calc(100% + .75rem);
+    left: 0;
+    max-width: max-content;
+    min-width: 18ch;
+    transition: 100ms ease-out;
+    background: var(--bg);
+    z-index: 3;
+    will-change: transform, opacity;
+
+    opacity: 0;
+    transform: translateY(-30%);
+    pointer-events: none;
+
+    transform-origin: top;
+    border-radius: .5rem;
+    box-shadow: 0 4px 24px -12px hsla(0, 0%, 0%, .7);
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray3);
+}
+
+div.menu-item.disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+div.menu-item {
+    cursor: pointer;
+    padding: .3rem .5rem;
+    border-radius: .2rem;
+    transition: 100ms;
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+}
+div.menu-item:hover {
+    background: var(--gray5);
+}
+div.menu-item:active {
+    background: var(--gray5);
+}

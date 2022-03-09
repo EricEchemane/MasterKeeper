@@ -1,0 +1,178 @@
+button {
+	cursor: pointer;
+	outline: none;
+	transition: 100ms;
+}
+
+/* =============== Action Dot Buttons ==================== */
+
+button.dot-action {
+	background: var(--gray3);
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	--size: .8rem;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+}
+button.dot-action.red {
+	background: var(--red);
+}
+button.dot-action.yellow {
+	background: var(--yellow);
+}
+button.dot-action.green {
+	background: var(--green);
+}
+button.dot-action:disabled {
+	pointer-events: none;
+	filter: grayscale(100%);
+	opacity: .5;
+	border: 1px solid transparent;
+}
+/* =============== Action Dot Buttons ==================== */
+
+/* =============== Buttons ==================== */
+button {
+	padding: .5rem 1rem;
+	background: var(--bg-main);
+	border: 0.5px solid var(--gray4);
+	box-shadow: 0px 0.5px 1px var(--gray2);
+	border-radius: .5rem;
+	font-weight: 600;
+	font-size: .9rem;
+	line-height: 1.1rem;
+	color: var(--text1);
+	width: max-content;
+}
+button:disabled {
+	cursor: not-allowed;
+	opacity: .5;
+}
+button:focus-visible {
+	box-shadow: 0 0 0 2px var(--teal);
+}
+button:active {
+	filter: brightness(.94);
+}
+button.filled {
+	background: var(--blue);
+	color: hsla(0, 100%, 100%, 1);
+}
+/* =============== Buttons ==================== */
+
+/* =============== Icon Buttons ==================== */
+div.icon-button:active::before {
+	background: linear-gradient(to top, transparent, transparent, hsla(0, 0%, 0%, .1));
+}
+div.icon-button.disabled {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: .5;
+}
+div.icon-button {
+	--size: 2.25rem;
+	width: var(--size);
+	line-height: 1rem;
+	height: var(--size);
+	font-size: 1.3rem;
+	border-radius: .3rem;
+	background: var(--bg);
+	display: inline-grid;
+	place-items: center;
+	box-shadow: 0 0 0 1px var(--gray4);
+	color: var(--text);
+	background: var(--bg);
+	cursor: pointer;
+	position: relative;
+}
+div.icon-button::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	background: linear-gradient(to bottom, transparent, transparent, hsla(0, 0%, 0%, .1));
+}
+/* =============== Icon Buttons ==================== */
+
+/* =============== Call to actuib Button ==================== */
+button.call-to-action::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	background: var(--blue);
+	opacity: .1;
+	transition: 200ms;
+}
+button.call-to-action {
+	--color: var(--blue);
+	position: relative;
+    white-space: nowrap;
+    border-radius: 5px;
+    color: var(--color);
+    outline: 0;
+    border: 0;
+	font-size: 1rem;
+	font-weight: 400;
+    padding: 14px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color .3s ease;
+	border: none;
+	overflow: hidden;
+	box-shadow: none;
+} 
+
+button.call-to-action:hover::before {
+	opacity: .2;
+}
+button.call-to-action i {
+	color: var(--color);
+	margin-left: .5rem;
+	font-size: inherit;
+}
+/* =============== Call to actuib Button ==================== */
+
+/* =============== Button Group ==================== */
+.button-group-wrapper {
+	width: max-content;
+	width: auto;
+	display: inline-flex;
+	background: var(--gray4);
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid var(--gray4);
+}
+.button-group-option i {
+	font-size: 1.3rem;
+}
+.button-group-option input{
+	display: none;
+}
+.button-group-option .button  {
+	--size: 2rem;
+	width: var(--size);
+	height: var(--size);
+	cursor: pointer;
+	line-height: 1rem;
+	margin: 0;
+	display: inline-grid;
+	place-items: center;
+}
+.button-group-option input:checked + .button {
+	background: var(--gray6);
+}
+/* =============== Button Group ==================== */
+button.large {
+	display: block;
+	margin: auto;
+	width: min(256px, 100%);
+	padding: 1rem;
+}

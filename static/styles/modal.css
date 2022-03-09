@@ -1,0 +1,32 @@
+
+/* =============== Modal ==================== */
+.modal-title-bar {
+	width: min(400px 90vw);
+	border-radius: .67rem .67rem 0 0;
+	padding: 1rem;
+	position: relative;
+	background: white;
+	box-shadow: 0 1px 1px 0 hsla(0, 0%, 0%, .12);
+}
+.modal-title-bar.dark {
+	background-color: var(--bg-dark);
+	color: var(--text-4light1);
+}
+.modal-title {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1rem;
+	color: inherit;
+}
+.modal-action-container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100%;
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+}
+/* =============== Modal ==================== */

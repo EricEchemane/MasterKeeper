@@ -1,0 +1,27 @@
+.multi-switch-option-wrapper {
+    --width: 5rem;
+    border-radius: .4rem;
+    display: inline-block;
+    display: inline-flex;
+    /* flex-direction: column; */
+    width: max-content;
+    background: var(--gray4);
+    padding: 2px;
+}
+.multi-switch-option .text {
+    display: inline-block;
+    width: 15ch;
+    padding: .5rem;
+    border-radius: .3rem;
+    font-size: .9rem;
+    line-height: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.multi-switch-option input[type='radio']:checked + .text {
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, .18);
+    backdrop-filter: brightness(1.3);
+}
+.multi-switch-option input[type='radio'] {
+    display: none;
+}

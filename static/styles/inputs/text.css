@@ -1,0 +1,28 @@
+input[type='text'], input[type='password'], input[type='search'] {
+    outline: none;
+    border: 1px solid var(--gray2);
+    border-radius: .5rem;
+    font-weight: normal;
+    font-size: .9rem;
+    line-height: 1rem;
+    display: flex;
+    color: var(--text1);
+    padding: .65rem;
+    background-color: var(--bg);
+    /* filter: brightness(1.2); */
+}
+input[type='text']:focus, input[type='password']:focus, input[type='search']:focus{
+    box-shadow: 0 0 0 2px var(--teal);
+}
+input[type='text']:disabled, input[type='password']:disabled, input[type='search']:disabled{
+    opacity: .5;
+}
+
+input[type='search'] {
+    width: max-content;
+    position: relative;
+    background: url('./search.svg') no-repeat;
+    background-position: .5rem center;
+    background-size: 1.4rem;
+    padding-left: 2.3rem;
+}
