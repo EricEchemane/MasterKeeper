@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { slide } from 'svelte/transition';
 	import ImgAvatar from './ImgAvatar.svelte';
+	import { clickOutside } from '$lib/util/clickoutside';
 
+	export let outclick;
 	let avatarsPath: string[] = [
 		'/avatars/female_brown_hair.svg',
 		'/avatars/female_green_hair.svg',
@@ -20,7 +23,12 @@
 	};
 </script>
 
-<section aria-label="choose avatar">
+<section
+	aria-label="choose avatar"
+	transition:slide={{ duration: 228 }}
+	use:clickOutside
+	on:outclick={outclick}
+>
 	{#each avatarsPath as avatar, i}
 		<div on:click={() => select(avatar)}>
 			<ImgAvatar {avatar} alt={`avatar-${i}`} />

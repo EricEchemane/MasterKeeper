@@ -79,7 +79,7 @@
 
 <main aria-label="Edit Profile" transition:slide={{ duration: 114 }}>
 	{#if showAvatarOptions}
-		<AvatarSelector on:select={setAvatar} />
+		<AvatarSelector outclick={() => (showAvatarOptions = false)} on:select={setAvatar} />
 	{/if}
 	<div class="modal-title-bar">
 		<h1 class="modal-title">Edit Profile</h1>
