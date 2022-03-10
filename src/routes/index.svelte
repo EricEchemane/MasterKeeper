@@ -29,11 +29,13 @@
 
 <progress max="3" value={$Progress} />
 
-{#if $Progress < 3}
-	<button id="next" class="filled" on:click={next}> &#x2192 </button>
-{:else}
-	<button id="next-2" class="filled" on:click={next}> Start now! </button>
-{/if}
+<div class="actions">
+	{#if $Progress < 3}
+		<button id="next" class="filled" on:click={next}> &#x2192 </button>
+	{:else}
+		<button id="next-2" class="filled" on:click={next}> Start now! </button>
+	{/if}
+</div>
 
 <style>
 	.description {
@@ -58,5 +60,8 @@
 		display: block;
 		margin: 0 auto 0.5rem;
 		height: 7px;
+	}
+	.actions {
+		padding-bottom: 3rem;
 	}
 </style>

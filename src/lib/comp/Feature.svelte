@@ -30,8 +30,9 @@
 	img {
 		display: block;
 		margin: auto;
-		height: 214px;
+		height: 400px;
 		max-width: 90%;
+		border-radius: 0.5rem;
 	}
 	.title {
 		text-align: center;
