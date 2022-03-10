@@ -1,9 +1,21 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/util/clickoutside';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 
 	const dispatch = createEventDispatcher();
+
+	onMount(() => {
+		document.addEventListener('keydown', handleEscape);
+	});
+	onDestroy(() => {
+		document.removeEventListener('keydown', handleEscape);
+	});
+
+	const handleEscape = (e: KeyboardEvent) => {
+		e.stopPropagation();
+		if (e.key === 'Escape') outclick();
+	};
 
 	export let outclick;
 	export let oncancel: EventListener;

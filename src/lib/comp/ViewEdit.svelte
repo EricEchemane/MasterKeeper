@@ -3,6 +3,7 @@
 	import { userStore } from '$lib/stores/user/user_store';
 	import { viewEditStore } from '$lib/stores/user/view_edit_account';
 	import { makePostOptions } from '$lib/util/makePostOptions';
+	import { onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import ErrorMessage from './ErrorMessage.svelte';
 	import PasswordPortal from './PasswordPortal.svelte';
@@ -17,6 +18,17 @@
 
 	$: primaryButtonText = state === 'initial' ? 'Decrypt' : state === 'decrypted' ? 'Edit' : 'Save';
 	$: account = $viewEditStore.account;
+
+	onMount(() => {
+		document.addEventListener('keydown', handleEscape);
+	});
+	onDestroy(() => {
+		document.removeEventListener('keydown', handleEscape);
+	});
+
+	const handleEscape = (e: KeyboardEvent) => {
+		if (e.key === 'Escape') viewEditStore.toggleModal();
+	};
 
 	const dispatchAction = async () => {
 		if (state === 'initial') togglePasswordPortal();

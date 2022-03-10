@@ -3,7 +3,7 @@
 	import { userStore } from '$lib/stores/user/user_store';
 	import type { User } from '$lib/types/user';
 	import { makePostOptions } from '$lib/util/makePostOptions';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import AvatarSelector from './AvatarSelector.svelte';
 	import ErrorMessage from './ErrorMessage.svelte';
@@ -32,6 +32,17 @@
 	};
 	const toggleAvatarOptions = () => (showAvatarOptions = !showAvatarOptions);
 	const toggleImgUrlInput = () => (showImgUrlInput = !showImgUrlInput);
+
+	onMount(() => {
+		document.addEventListener('keydown', handleEscape);
+	});
+	onDestroy(() => {
+		document.removeEventListener('keydown', handleEscape);
+	});
+
+	const handleEscape = (e: KeyboardEvent) => {
+		if (e.key === 'Escape') close();
+	};
 
 	const save = async (masterPassword: string) => {
 		loading.set(true);

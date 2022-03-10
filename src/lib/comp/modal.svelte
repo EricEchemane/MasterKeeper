@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/util/clickoutside';
+	import { onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 
 	export let title: string;
@@ -8,6 +9,17 @@
 	export let outclick: any;
 	export let confirmTitle: string = 'ok';
 	export let actions: any = {};
+
+	onMount(() => {
+		document.addEventListener('keydown', handleEscape);
+	});
+	onDestroy(() => {
+		document.removeEventListener('keydown', handleEscape);
+	});
+
+	const handleEscape = (e: KeyboardEvent) => {
+		if (e.key === 'Escape') outclick();
+	};
 </script>
 
 <div
