@@ -1,4 +1,5 @@
 import { client } from "$lib/client";
+import { verifyHash } from "$lib/util/hashing";
 import { getBaseUrl, getToken } from "$lib/util/validators";
 import jwt from "jsonwebtoken";
 
@@ -18,6 +19,13 @@ export async function post({ request }) {
 
     try {
         const userId = jwt.verify(token, process.env.KEEPER);
+
+        const user = await client.user.findUnique({ where: { id: String(userId) } });
+        if (!user) return Response.redirect(`${baseUrl}create`, 303);
+
+        const correct = await verifyHash(user.master_password, body.masterPassword);
+        if (!correct) return { status: 401, body: { message: 'Incorrect master password' } };
+
         const updated = await client.user.update({
             where: { id: String(userId) },
             data: {
