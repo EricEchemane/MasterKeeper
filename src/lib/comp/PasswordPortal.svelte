@@ -68,8 +68,8 @@
 		z-index: 10;
 		border-radius: 0.5rem;
 		overflow: hidden;
-		/* background: var(--bg); */
-		backdrop-filter: blur(100px);
+		background: var(--bg);
+		/* backdrop-filter: blur(100px); */
 	}
 	.modal-title-bar {
 		width: 100%;

@@ -2,6 +2,7 @@
 	import { loading } from '$lib/stores/loading/loading_store';
 	import { userStore } from '$lib/stores/user/user_store';
 	import { viewEditStore } from '$lib/stores/user/view_edit_account';
+	import { clickOutside } from '$lib/util/clickoutside';
 	import { makePostOptions } from '$lib/util/makePostOptions';
 	import { onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
@@ -89,7 +90,12 @@
 	};
 </script>
 
-<main aria-label="view or edit account" transition:slide={{ duration: 114 }}>
+<main
+	aria-label="view or edit account"
+	transition:slide={{ duration: 129 }}
+	use:clickOutside
+	on:outclick={viewEditStore.toggleModal}
+>
 	<div class="modal-title-bar">
 		<h1 class="modal-title">View and edit account</h1>
 	</div>
@@ -167,10 +173,10 @@
 		transform: translate(-50%, -50%);
 		box-shadow: 0 8px 42px -4px hsla(0, 0%, 0%, 0.7);
 		width: min(350px, 90vw);
-		z-index: 10;
+		z-index: 5;
 		border-radius: 0.5rem;
 		overflow: hidden;
-		backdrop-filter: blur(100px);
+		background-color: var(--bg);
 	}
 	.modal-title-bar {
 		width: 100%;

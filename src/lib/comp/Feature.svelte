@@ -9,7 +9,7 @@
 
 {#if index < features.length - 1}
 	{#key feature}
-		<section aria-label={'Feature:' + feature.title} transition:slide>
+		<section aria-label={'Feature:' + feature.title}>
 			<img src={feature.illustration} alt={feature.title} />
 			<h3 class="title">{feature.title}</h3>
 		</section>

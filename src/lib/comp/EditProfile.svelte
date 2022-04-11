@@ -163,7 +163,7 @@
 		z-index: 8;
 		border-radius: 0.5rem;
 		overflow: hidden;
-		backdrop-filter: blur(100px);
+		background: var(--bg);
 	}
 	.modal-title-bar {
 		width: 100%;
