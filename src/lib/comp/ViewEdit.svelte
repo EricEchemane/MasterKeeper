@@ -2,7 +2,6 @@
 	import { loading } from '$lib/stores/loading/loading_store';
 	import { userStore } from '$lib/stores/user/user_store';
 	import { viewEditStore } from '$lib/stores/user/view_edit_account';
-	import { clickOutside } from '$lib/util/clickoutside';
 	import { makePostOptions } from '$lib/util/makePostOptions';
 	import { onDestroy, onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
@@ -90,12 +89,7 @@
 	};
 </script>
 
-<main
-	aria-label="view or edit account"
-	transition:slide={{ duration: 129 }}
-	use:clickOutside
-	on:outclick={viewEditStore.toggleModal}
->
+<main aria-label="view or edit account" transition:slide={{ duration: 129 }}>
 	<div class="modal-title-bar">
 		<h1 class="modal-title">View and edit account</h1>
 	</div>
