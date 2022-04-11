@@ -14,6 +14,10 @@
 		<div class="empty-state">
 			<img src="/assets/add_account.svg" alt="no accounts" />
 			<h2 class="title">No accounts stored yet</h2>
+			<p style="text-align: center; margin-bottom: 1.5rem;">
+				MasterKeeper allows you to store your accounts' credentials in a secure way so you don't
+				have to remember them all. They are ecnrypted with your single master password.
+			</p>
 			<button class="call-to-action" on:click={onadd}>Add some</button>
 		</div>
 	{:else}
